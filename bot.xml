@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml version="1.0">
+<category>
+  <pattern>HELLO I AM *</pattern>
+  <template>Hello <set name="name"> <star/></set>!</template>
+</category>
+
+<category>
+  <pattern>HI</pattern>
+  <template>
+    <condition>
+      <li name="name" value="">Hello new friend!</li>
+      <li>Hello <get name="name"/>!</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>HOW IS THE WEATHER TODAY</pattern>
+  <template>
+    <random>
+      <li>It is sunny today!</li>
+      <li>Rain is falling!</li>
+      <li>A thunderstorm is coming!</li>
+      <li>Snow can be expected!</li>
+      <li>Some clouds will be visible!</li>
+    </random>
+  </template>
+</category>
+<category>
+  <pattern>CAN YOU TELL ME THE WEATHER</pattern>
+  <template>
+    <srai>HOW IS THE WEATHER TODAY</srai>
+  </template>
+</category>
+
+
+<category>
+  <pattern>I LIKE *</pattern>
+  <template>I like <star/> too!</template>
+</category>
+
+<category>
+  <pattern>BYE</pattern>
+  <template>
+    <srai>BYE BOT</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>BYE *</pattern>
+  <template>
+    <condition>
+      <li name="name" value="">Goodbye!</li>
+      <li>Goodbye <get name="name"/>! It was a pleasure meeting you :)</li>
+    </condition>
+  </template>
+</category>
+</aiml>
